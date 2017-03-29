@@ -1,4 +1,4 @@
-# blueprint-B201-NINA-B1
+# blueprint-B201-NINA-B1-EVA-M8
 ...
 
 ## Disclaimer
