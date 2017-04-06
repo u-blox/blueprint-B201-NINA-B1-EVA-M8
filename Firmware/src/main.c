@@ -68,7 +68,7 @@
 #define DEVICE_NAME_PREFIX                   "B201-"                                         /**< Name prefix, 4 chars from the MAC will be added as well. */
 #define MANUFACTURER_NAME                    "u-blox"                                        /**< Manufacturer. Will be passed to Device Information Service. */
 #define MODEL_NUMBER                         "B201"                                          /**< Model number. Will be passed to Device Information Service. */
-#define SW_VERSION                           "0.1.3"                                         /**< Software version. Will be passed to Device Information Service. */
+#define SW_VERSION                           "0.1.4"                                         /**< Software version. Will be passed to Device Information Service. */
 #define APP_ADV_INTERVAL                     40                                              /**< The advertising interval (in units of 0.625 ms; this value corresponds to 25 ms). */
 #define APP_ADV_TIMEOUT_IN_SECONDS           180                                             /**< The advertising time-out in units of seconds. */
 
@@ -251,7 +251,7 @@ void process_GNRMC_message(void)
                     if (field_index == 0)
                         longitude = 10000000*100*character_hex_to_int(m_gnss_buffer[message_index]);
                     if (field_index == 1)
-                        longitude = 10000000*10*character_hex_to_int(m_gnss_buffer[message_index]);
+                        longitude += 10000000*10*character_hex_to_int(m_gnss_buffer[message_index]);
                     if (field_index == 2)
                         longitude += 10000000*character_hex_to_int(m_gnss_buffer[message_index]);
                     if (field_index == 3)
